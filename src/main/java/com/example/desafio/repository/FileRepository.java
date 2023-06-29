@@ -1,7 +1,7 @@
 package com.example.desafio.repository;
 
-import com.example.desafio.model.File;
+import com.example.desafio.model.FileTransaction;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface FileRepository extends JpaRepository<File, Long> {
+public interface FileRepository extends JpaRepository<FileTransaction, Long> {
 }
