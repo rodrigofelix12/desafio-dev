@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
@@ -24,7 +25,7 @@ public class FileTransaction {
     private TypeTransaction typeTransaction;
 
     @Column(name = "DATE_TRANSACTION")
-    private LocalDateTime dateTransaction;
+    private LocalDate dateTransaction;
 
     @Column(name = "VALUE_TRANSACTION")
     private BigDecimal valueTransaction;
