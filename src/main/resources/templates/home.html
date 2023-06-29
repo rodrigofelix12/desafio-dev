@@ -30,7 +30,7 @@
 
             <tr th:each="transaction : ${transactions}">
                 <td>#</td>
-                <td><span th:text="${transaction.typeTransaction.typeTransaction}"></span></td>
+                <td><span th:text="${transaction.typeTransaction}"></span></td>
                 <td><span th:text="${transaction.dateTransaction}"></span></td>
                 <td>R$ <span th:text="${transaction.valueTransaction}"></span></td>
                 <td><span th:text="${transaction.cpf}"></span></td>
