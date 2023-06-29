@@ -1,4 +1,4 @@
-package entities;
+package com.example.desafio.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
@@ -13,7 +13,7 @@ import java.time.LocalTime;
 public class File {
 
     private Long id;
-    
+
     private TypeTransaction typeTransaction;
 
     private LocalDateTime dateTransaction;

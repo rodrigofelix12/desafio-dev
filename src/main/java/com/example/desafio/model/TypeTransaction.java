@@ -1,7 +1,7 @@
-package entities;
+package com.example.desafio.model;
 
-import enums.NatureTransactionEnum;
-import enums.SignalTransactionEnum;
+import com.example.desafio.enums.SignalTransactionEnum;
+import com.example.desafio.enums.NatureTransactionEnum;
 import lombok.Getter;
 import lombok.Setter;
 
