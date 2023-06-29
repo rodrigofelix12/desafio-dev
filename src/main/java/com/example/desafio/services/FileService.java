@@ -7,11 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.*;
-import java.nio.file.Files;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 @Service
 public class FileService {
@@ -19,12 +20,11 @@ public class FileService {
     @Autowired
     FileTransactionRepository repository;
 
-
     public List<FileTransaction> getAllTransactions() {
         return repository.findAll();
     }
 
-    public void uploadFile(MultipartFile file) throws IOException {
+    public void uploadFile(MultipartFile file) {
         BufferedReader br;
         try {
             String line;
@@ -32,22 +32,10 @@ public class FileService {
             br = new BufferedReader(new InputStreamReader(is));
             while ((line = br.readLine()) != null) {
                 var object = FileToObject.mapToObject(line);
-                System.out.println(line);
+                repository.save(object);
             }
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }
-//        try {
-//            Scanner scanner = new Scanner(file.getInputStream());
-//
-//            while (scanner.hasNextLine()) {
-//                var object = FileToObject.mapToObject(scanner.nextLine());
-//                System.out.println(scanner.nextLine());
-//            }
-//
-//            scanner.close();
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
     }
 }

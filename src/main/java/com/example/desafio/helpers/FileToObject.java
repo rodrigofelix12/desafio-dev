@@ -1,6 +1,10 @@
 package com.example.desafio.helpers;
 
+import com.example.desafio.enums.NatureTransactionEnum;
+import com.example.desafio.enums.SignalTransactionEnum;
+import com.example.desafio.enums.TypeTransactionEnum;
 import com.example.desafio.model.FileTransaction;
+import com.example.desafio.model.TypeTransaction;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -13,8 +17,7 @@ public class FileToObject {
     public static FileTransaction mapToObject(String s) {
         FileTransaction fileTransaction = new FileTransaction();
 
-//        String tipo = s.substring(0, 1);
-
+        fileTransaction.setTypeTransaction(getTypeTransaction(s));
         fileTransaction.setDateTransaction(getLocalDate(s));
         fileTransaction.setValueTransaction(getBigDecimal(s));
         fileTransaction.setCpf(s.substring(19, 30));
@@ -24,6 +27,20 @@ public class FileToObject {
         fileTransaction.setStoreName(s.substring(62, 80));
 
         return fileTransaction;
+    }
+
+    private static TypeTransaction getTypeTransaction(String s) {
+        TypeTransaction typeTransaction = new TypeTransaction();
+        String type = s.substring(0, 1);
+        typeTransaction.setTypeTransaction(TypeTransactionEnum.valueOfLabel(type));
+        if (type.equals("2") || type.equals("3") || type.equals("9")) {
+            typeTransaction.setNatureTransaction(NatureTransactionEnum.SAIDA);
+            typeTransaction.setSignalTransaction(SignalTransactionEnum.NEGATIVE);
+        } else {
+            typeTransaction.setNatureTransaction(NatureTransactionEnum.ENTRADA);
+            typeTransaction.setSignalTransaction(SignalTransactionEnum.POSITIVE);
+        }
+        return typeTransaction;
     }
 
     private static LocalTime getHourTransaction(String s) {
