@@ -1,8 +1,5 @@
 package com.example.desafio.model;
 
-import com.example.desafio.enums.NatureTransactionEnum;
-import com.example.desafio.enums.SignalTransactionEnum;
-import com.example.desafio.enums.TypeTransactionEnum;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -11,7 +8,6 @@ import lombok.Setter;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.List;
 
 @Getter
 @Setter
