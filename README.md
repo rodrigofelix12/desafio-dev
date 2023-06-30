@@ -15,7 +15,7 @@ mvn spring-boot:run
 ## API's Disponíveis
 
 Acessar a seguinte URL no seu navegador de preferência: http://localhost:8080
-  Neste endereço é possível realizar o uploado do arquivo e visualizar uma tabela contendo os dados salvos a partir do arquivo enviado.
+  Neste endereço é possível realizar o upload do arquivo CNAB.txt e visualizar uma tabela contendo os dados salvos a partir do arquivo enviado.
 
 GET - http://localhost:8080/transactions (Para buscar todas as transações cadastradas)
 
