@@ -26,6 +26,7 @@
                 <th scope="col">Hora</th>
                 <th scope="col">Dono da loja</th>
                 <th scope="col">Nome loja</th>
+                <th scope="col">Total</th>
             </tr>
 
             <tr th:each="transaction : ${transactions}">
@@ -38,6 +39,7 @@
                 <td><span th:text="${transaction.hourTransaction}"></span></td>
                 <td><span th:text="${transaction.storeOwner}"></span></td>
                 <td><span th:text="${transaction.storeName}"></span></td>
+                <td><span th:text="${transaction.total}"></span></td>
             </tr>
         </table>
     </div>

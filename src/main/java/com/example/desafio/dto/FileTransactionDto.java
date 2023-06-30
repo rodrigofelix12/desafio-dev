@@ -1,6 +1,5 @@
 package com.example.desafio.dto;
 
-import com.example.desafio.model.TypeTransaction;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
@@ -29,4 +28,6 @@ public class FileTransactionDto {
     private String storeOwner;
 
     private String storeName;
+
+    private BigDecimal total;
 }

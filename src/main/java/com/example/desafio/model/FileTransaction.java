@@ -23,6 +23,7 @@ public class FileTransaction {
     @JoinColumn(name = "type_id", referencedColumnName = "id")
     private TypeTransaction typeTransaction;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy", locale = "pt-BR", timezone = "Brazil/East")
     @Column(name = "DATE_TRANSACTION")
     private LocalDate dateTransaction;
 
